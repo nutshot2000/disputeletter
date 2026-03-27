@@ -14,6 +14,7 @@ export interface FormData {
   userFullName: string;
   userAddress: string;
   userEmail: string;
+  userPhone?: string;
   recipientName: string;
   recipientAddress: string;
   incidentDate: string;

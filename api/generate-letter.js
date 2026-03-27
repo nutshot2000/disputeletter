@@ -35,18 +35,30 @@ export default async function handler(req, res) {
       formData.letterTone === 'assertive' ? 'Highly assertive, emphasizing strict legal compliance and immediate threat of litigation.' :
       'Firm, professional, and assertive (standard legal demand tone).';
 
+    const excludedKeys = new Set(['country', 'userFullName', 'userAddress', 'userEmail', 'userPhone', 'recipientName', 'recipientAddress', 'incidentDate', 'disputeAmount', 'state', 'situationDescription', 'desiredResolution', 'letterTone']);
+    const extraFields = Object.keys(formData)
+      .filter(k => !excludedKeys.has(k) && formData[k])
+      .map(k => `${k.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}: ${formData[k]}`)
+      .join('\n');
+
     const prompt = `Generate a professional legal demand letter for a ${disputeType} dispute.
 
 CRITICAL: Write in English only. Jurisdiction: ${countryName}, ${regionLabel}: ${formData.state}
 
-Sender: ${formData.userFullName}
+Sender Details:
+Name: ${formData.userFullName}
 Address: ${formData.userAddress}
+Email: ${formData.userEmail || '[Not Provided]'}
+Phone: ${formData.userPhone || '[Not Provided]'}
 
-Recipient: ${formData.recipientName}
+Recipient Details:
+Name: ${formData.recipientName}
 Address: ${formData.recipientAddress}
 
-Date: ${formData.incidentDate}
-Amount: ${currencySymbol}${formData.disputeAmount}
+Dispute Info:
+Date of Incident: ${formData.incidentDate}
+Amount in Dispute: ${currencySymbol}${formData.disputeAmount}
+${extraFields ? '\\nAdditional Details:\\n' + extraFields : ''}
 
 Situation:
 ${formData.situationDescription}

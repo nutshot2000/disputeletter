@@ -103,7 +103,7 @@ export function DisputeForm({ type, initialData, onBack, onSubmit }: DisputeForm
             </select>
           </div>
         </div>
-        <div className="sm:col-span-3">
+        <div className="sm:col-span-6">
           <label htmlFor="userFullName" className="block text-sm font-medium text-gray-700">Full Name</label>
           <div className="mt-1">
             <input required type="text" name="userFullName" id="userFullName" value={formData.userFullName || ''} onChange={handleChange} className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" />
@@ -113,6 +113,12 @@ export function DisputeForm({ type, initialData, onBack, onSubmit }: DisputeForm
           <label htmlFor="userEmail" className="block text-sm font-medium text-gray-700">Email Address</label>
           <div className="mt-1">
             <input required type="email" name="userEmail" id="userEmail" value={formData.userEmail || ''} onChange={handleChange} className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" />
+          </div>
+        </div>
+        <div className="sm:col-span-3">
+          <label htmlFor="userPhone" className="block text-sm font-medium text-gray-700">Phone Number</label>
+          <div className="mt-1">
+            <input required type="tel" name="userPhone" id="userPhone" value={formData.userPhone || ''} onChange={handleChange} className="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border" />
           </div>
         </div>
         <div className="sm:col-span-6">
