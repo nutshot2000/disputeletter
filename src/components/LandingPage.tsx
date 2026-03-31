@@ -38,7 +38,7 @@ export function LandingPage({ onSelectType }: LandingPageProps) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-8">
           <div className="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-blue-700 bg-blue-100 border border-blue-200 mb-8 shadow-sm animate-fade-in">
             <Zap className="h-4 w-4 mr-2 text-blue-600" />
-            AI-Powered Legal Demand Letters
+            Professional Legal Demand Letters
           </div>
           
           <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight sm:text-6xl lg:text-7xl mb-6">
@@ -189,8 +189,8 @@ export function LandingPage({ onSelectType }: LandingPageProps) {
                 <Zap className="h-10 w-10" />
               </div>
               <div className="absolute top-16 -right-2 inline-flex items-center justify-center h-8 w-8 rounded-full bg-indigo-600 text-white font-bold mb-4 shadow-sm border-2 border-white focus:outline-none">2</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">AI Drafts Your Letter</h3>
-              <p className="text-gray-500 leading-relaxed px-4">Our legal AI generates a formal demand letter citing relevant state laws and setting a strict deadline.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">We Draft Your Letter</h3>
+              <p className="text-gray-500 leading-relaxed px-4">Our system creates a professional, legally-sound demand letter citing relevant state laws and setting a strict deadline.</p>
             </div>
 
             {/* Step 3 */}
