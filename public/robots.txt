@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://disputeletter.org/sitemap.xml
+Sitemap: https://www.disputeletter.org/sitemap.xml

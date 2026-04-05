@@ -51,6 +51,10 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
+    // Serve sitemap.xml explicitly to ensure it's always available
+    app.get('/sitemap.xml', (req, res) => {
+      res.sendFile(path.join(distPath, 'sitemap.xml'));
+    });
     app.use(express.static(distPath));
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
