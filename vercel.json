@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "http://disputeletter.org/:path*",
+      "destination": "https://www.disputeletter.org/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://disputeletter.org/:path*",
+      "destination": "https://www.disputeletter.org/:path*",
+      "permanent": true
+    }
+  ]
+}
